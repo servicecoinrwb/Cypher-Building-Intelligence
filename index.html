@@ -387,12 +387,25 @@
                     <!-- Config for FormSubmit -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New Cypher Lead Submission">
-                    <input type="hidden" name="_next" value="https://mechanicaltemp.com/thanks"> 
+                    <!-- Removed _next redirect so you can see the activation message on first submission -->
                     
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 uppercase">Full Name</label>
+                        <input type="text" name="name" required class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 uppercase">Company Name</label>
+                        <input type="text" name="company" required class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1" placeholder="Acme Industries">
+                    </div>
                     <div>
                         <label class="text-xs font-bold text-gray-500 uppercase">Email Address</label>
                         <input type="email" name="email" required class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1" placeholder="name@company.com">
                     </div>
+                    <div>
+                        <label class="text-xs font-bold text-gray-500 uppercase">Message</label>
+                        <textarea name="message" rows="3" class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1" placeholder="Tell us about your facility..."></textarea>
+                    </div>
+
                     <button class="w-full bg-cypher-accent text-black font-bold py-3 rounded hover:bg-cyan-400 transition">Contact Sales</button>
                 </form>
                 <div class="text-center mt-4">
