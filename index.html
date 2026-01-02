@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cypher | Building Intelligence</title>
+    <title>Cypher | Industrial Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -76,7 +76,11 @@
         }
         .status-dot { animation: radar 2s infinite; }
         
-        .store-card:hover .store-btn { background-color: #00f0ff; color: black; }
+        .store-card:hover .store-btn { background-color: #00f0ff; color: black; border-color: #00f0ff; }
+        
+        /* Modal Transitions */
+        .modal-enter { opacity: 0; pointer-events: none; transform: scale(0.95); }
+        .modal-active { opacity: 1; pointer-events: auto; transform: scale(1); }
     </style>
 </head>
 <body class="antialiased">
@@ -205,22 +209,22 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- MODE 1 -->
-                <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-cypher-accent/50 transition">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">01</div>
-                    <div class="text-cypher-accent font-mono font-bold mb-2">/// SALES PHASE</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Demo Mode</h3>
-                    <p class="text-gray-400 text-sm">
-                        The ultimate sales tool. Disconnect sensors and the <strong>Physics Engine</strong> takes over, simulating real temperature reactions on the dashboard to close the deal in the boardroom.
-                    </p>
-                </div>
-
-                <!-- MODE 2 -->
                 <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-yellow-500/50 transition">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">02</div>
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">01</div>
                     <div class="text-yellow-500 font-mono font-bold mb-2">/// CONSTRUCTION PHASE</div>
                     <h3 class="text-2xl font-bold text-white mb-4">Install Mode</h3>
                     <p class="text-gray-400 text-sm">
                         Silent operation. Power up the panel during construction. Outputs are mechanically locked out. No nuisance alarms. No relay clicking. Safe for electricians.
+                    </p>
+                </div>
+
+                <!-- MODE 2 -->
+                <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-cypher-accent/50 transition">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">02</div>
+                    <div class="text-cypher-accent font-mono font-bold mb-2">/// SALES PHASE</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Demo Mode</h3>
+                    <p class="text-gray-400 text-sm">
+                        The ultimate sales tool. Disconnect sensors and the <strong>Physics Engine</strong> takes over, simulating real temperature reactions on the dashboard to close the deal in the boardroom.
                     </p>
                 </div>
 
@@ -378,7 +382,7 @@
         </div>
     </section>
 
-    <!-- STORE / CATALOG SECTION -->
+    <!-- STORE / CATALOG SECTION (UPDATED) -->
     <section id="store" class="py-24 px-6 bg-[#0e0e0e] border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -398,7 +402,7 @@
                         <h4 class="text-xl font-bold text-white mb-2">Edge Controller</h4>
                         <p class="text-sm text-gray-400 mb-4">Quad-core Linux automation server with BACnet/Modbus gateway.</p>
                     </div>
-                    <a href="#contact" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">Add to Quote</a>
+                    <button onclick="openProductModal('edge')" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">View Specs</button>
                 </div>
 
                 <!-- PRODUCT 2 -->
@@ -411,7 +415,7 @@
                         <h4 class="text-xl font-bold text-white mb-2">IO Expansion</h4>
                         <p class="text-sm text-gray-400 mb-4">8 Universal Inputs / 8 Relay Outputs. RS-485 Modbus interface.</p>
                     </div>
-                    <a href="#contact" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">Add to Quote</a>
+                    <button onclick="openProductModal('io')" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">View Specs</button>
                 </div>
 
                 <!-- PRODUCT 3 -->
@@ -424,7 +428,7 @@
                         <h4 class="text-xl font-bold text-white mb-2">Cypher Air</h4>
                         <p class="text-sm text-gray-400 mb-4">Wireless Temp/Humidity/CO2 sensor. 5-year battery life.</p>
                     </div>
-                    <a href="#contact" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">Add to Quote</a>
+                    <button onclick="openProductModal('air')" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">View Specs</button>
                 </div>
 
                 <!-- PRODUCT 4 -->
@@ -437,7 +441,7 @@
                         <h4 class="text-xl font-bold text-white mb-2">Cypher OS License</h4>
                         <p class="text-sm text-gray-400 mb-4">Perpetual site license. Unlimited points. No cloud fees.</p>
                     </div>
-                    <a href="#contact" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">Add to Quote</a>
+                    <button onclick="openProductModal('license')" class="store-btn w-full block text-center border border-white/20 text-white py-2 rounded font-bold text-sm transition">View Specs</button>
                 </div>
             </div>
         </div>
@@ -450,12 +454,11 @@
             <p class="text-gray-400 mb-10">Hardware available for certified partners.</p>
             
             <div class="bg-[#111] border border-white/10 p-8 rounded-2xl max-w-md mx-auto text-left">
-                <!-- UPDATED FORM SECTION -->
+                <!-- FORM SECTION -->
                 <form action="https://formsubmit.co/admin@mechanicaltemp.com" method="POST" class="space-y-4">
                     <!-- Config for FormSubmit -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New Cypher Lead Submission">
-                    <!-- Removed _next redirect so you can see the activation message on first submission -->
                     
                     <div>
                         <label class="text-xs font-bold text-gray-500 uppercase">Full Name</label>
@@ -483,12 +486,138 @@
 
             <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
-                    <span class="font-mono font-bold text-xl tracking-tighter text-white">CYPHER <span class="text-cypher-accent text-sm ml-1"> BUILDING INTELLIGENCE</span></span>
+                    <span class="font-bold text-white text-lg">CYPHER <span class="text-cypher-blue text-xs">Building Intelligence</span></span>
                 </div>
                 <div>© 2026 Mechanical Temp. All rights reserved.</div>
             </div>
         </div>
     </footer>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="productModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="bg-[#111] border border-white/10 rounded-2xl shadow-2xl max-w-2xl w-full p-8 relative transform transition-transform duration-300 scale-95" id="modalContent">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white text-2xl">&times;</button>
+            
+            <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center text-cypher-accent text-3xl shrink-0" id="modalIcon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-mono text-cypher-accent mb-1" id="modalSku">CYP-EDGE-X1</div>
+                    <h3 class="text-2xl font-bold text-white mb-4" id="modalTitle">Cypher Edge Controller</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed" id="modalDesc">
+                        The central brain of the Cypher ecosystem. A ruggedized Linux automation server designed to replace expensive legacy JACE units.
+                    </p>
+                    
+                    <div class="bg-black/50 rounded-lg p-4 border border-white/5">
+                        <h4 class="text-xs font-bold text-white uppercase mb-3">Technical Specifications</h4>
+                        <ul class="space-y-2 text-sm text-gray-400 font-mono" id="modalSpecs">
+                            <!-- Specs injected here -->
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <a href="#contact" onclick="closeProductModal()" class="bg-white text-black px-6 py-2 rounded font-bold text-sm hover:bg-gray-200 transition">Request Pricing</a>
+                        <button onclick="closeProductModal()" class="text-gray-500 hover:text-white text-sm">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // PRODUCT DATA
+        const products = {
+            'edge': {
+                icon: 'fa-server',
+                sku: 'CYP-EDGE-X1',
+                title: 'Cypher Edge Controller',
+                desc: 'The central brain of the Cypher ecosystem. A ruggedized Linux automation server designed to replace expensive legacy JACE units with open-source power.',
+                specs: [
+                    'Processor: Quad-Core ARM Cortex A72',
+                    'Memory: 4GB LPDDR4',
+                    'Storage: 32GB Industrial pSLC',
+                    'Network: 1x Gigabit Ethernet, 1x RS-485',
+                    'Power: 24VAC / VDC'
+                ]
+            },
+            'io': {
+                icon: 'fa-code-branch',
+                sku: 'CYP-IO-88',
+                title: 'IO-88 Expansion Module',
+                desc: 'Industrial I/O expansion for mechanical equipment. Daisy-chain up to 32 modules on a single Edge controller via RS-485 Modbus.',
+                specs: [
+                    'Inputs: 8x Universal (0-10V, 10K, 4-20mA)',
+                    'Outputs: 8x Form A Relays (24VAC @ 2A)',
+                    'Comms: Modbus RTU (RS-485)',
+                    'Overrides: Physical Hand-Off-Auto Switches',
+                    'Mounting: 35mm DIN Rail'
+                ]
+            },
+            'air': {
+                icon: 'fa-wifi',
+                sku: 'CYP-AIR-S',
+                title: 'Cypher Air Sensor',
+                desc: 'Wireless sensing made easy. Deploy sensors in minutes without running conduit. Perfect for retrofits in historic buildings or glass offices.',
+                specs: [
+                    'Sensors: Temp, Humidity, CO2, VOCs',
+                    'Battery Life: 5+ Years (2x AA Lithium)',
+                    'Range: 1,000ft Line of Sight (LoRaWAN)',
+                    'Update Rate: Configurable (1min - 15min)',
+                    'Mounting: Wall or Ceiling'
+                ]
+            },
+            'license': {
+                icon: 'fa-file-code',
+                sku: 'CYP-LIC-OS',
+                title: 'Cypher OS Site License',
+                desc: 'The operating system that powers your building. Unlike competitors, this is a one-time perpetual license with no recurring cloud fees.',
+                specs: [
+                    'Points: Unlimited',
+                    'Users: Unlimited',
+                    'Features: Web Server, SQL Database, Physics Engine',
+                    'Updates: OTA Security Patches',
+                    'API: Full REST API Access'
+                ]
+            }
+        };
+
+        const modal = document.getElementById('productModal');
+        const content = document.getElementById('modalContent');
+
+        function openProductModal(id) {
+            const p = products[id];
+            if(!p) return;
+
+            // Populate Data
+            document.getElementById('modalIcon').innerHTML = `<i class="fa-solid ${p.icon}"></i>`;
+            document.getElementById('modalSku').innerText = p.sku;
+            document.getElementById('modalTitle').innerText = p.title;
+            document.getElementById('modalDesc').innerText = p.desc;
+            
+            // Populate Specs
+            const specList = document.getElementById('modalSpecs');
+            specList.innerHTML = p.specs.map(s => `<li>• ${s}</li>`).join('');
+
+            // Show Modal
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closeProductModal() {
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeProductModal();
+        });
+    </script>
 
 </body>
 </html>
