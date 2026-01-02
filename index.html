@@ -114,7 +114,7 @@
             <!-- UPDATED BADGE HERE -->
             <div class="inline-block border border-white/10 bg-white/5 backdrop-blur rounded-full px-4 py-1.5 mb-8">
                 <span class="text-cypher-accent font-mono text-xs uppercase tracking-widest">
-                    <i class="fa-solid fa-circle-nodes mr-2"></i> Building Intelligence / Open Architecture
+                    <i class="fa-solid fa-circle-nodes mr-2"></i> Industrial Intelligence / Open Architecture
                 </span>
             </div>
 
@@ -202,22 +202,22 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- MODE 1 -->
-                <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-cypher-accent/50 transition">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">01</div>
-                    <div class="text-cypher-accent font-mono font-bold mb-2">/// SALES PHASE</div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Demo Mode</h3>
-                    <p class="text-gray-400 text-sm">
-                        The ultimate sales tool. Disconnect sensors and the <strong>Physics Engine</strong> takes over, simulating real temperature reactions on the dashboard to close the deal in the boardroom.
-                    </p>
-                </div>
-
-                <!-- MODE 2 -->
                 <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-yellow-500/50 transition">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">02</div>
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">01</div>
                     <div class="text-yellow-500 font-mono font-bold mb-2">/// CONSTRUCTION PHASE</div>
                     <h3 class="text-2xl font-bold text-white mb-4">Install Mode</h3>
                     <p class="text-gray-400 text-sm">
                         Silent operation. Power up the panel during construction. Outputs are mechanically locked out. No nuisance alarms. No relay clicking. Safe for electricians.
+                    </p>
+                </div>
+
+                <!-- MODE 2 -->
+                <div class="bg-panel border border-white/10 p-8 rounded-xl relative overflow-hidden group hover:border-cypher-accent/50 transition">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl font-black text-white">02</div>
+                    <div class="text-cypher-accent font-mono font-bold mb-2">/// SALES PHASE</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Demo Mode</h3>
+                    <p class="text-gray-400 text-sm">
+                        The ultimate sales tool. Disconnect sensors and the <strong>Physics Engine</strong> takes over, simulating real temperature reactions on the dashboard to close the deal in the boardroom.
                     </p>
                 </div>
 
@@ -382,10 +382,16 @@
             <p class="text-gray-400 mb-10">Hardware available for certified partners.</p>
             
             <div class="bg-[#111] border border-white/10 p-8 rounded-2xl max-w-md mx-auto text-left">
-                <form action="mailto:service@mechanicaltemp.com" method="GET" class="space-y-4">
+                <!-- UPDATED FORM SECTION -->
+                <form action="https://formsubmit.co/admin@mechanicaltemp.com" method="POST" class="space-y-4">
+                    <!-- Config for FormSubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="New Cypher Lead Submission">
+                    <input type="hidden" name="_next" value="https://mechanicaltemp.com/thanks"> 
+                    
                     <div>
                         <label class="text-xs font-bold text-gray-500 uppercase">Email Address</label>
-                        <input type="email" class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1">
+                        <input type="email" name="email" required class="w-full bg-black border border-white/10 rounded p-3 text-white focus:border-cypher-accent outline-none mt-1" placeholder="name@company.com">
                     </div>
                     <button class="w-full bg-cypher-accent text-black font-bold py-3 rounded hover:bg-cyan-400 transition">Contact Sales</button>
                 </form>
@@ -396,7 +402,7 @@
 
             <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
-                    <span class="font-mono font-bold text-xl tracking-tighter text-white">CYPHER <span class="text-cypher-accent text-sm ml-1"> BUILDING INTELLIGENCE</span></span>
+                    <span class="font-bold text-white text-lg">CYPHER <span class="text-cypher-blue text-xs">Building Intelligence</span></span>
                 </div>
                 <div>© 2026 Mechanical Temp. All rights reserved.</div>
             </div>
