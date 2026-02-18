@@ -1,207 +1,220 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cypher | Engineering Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Space Grotesk', 'monospace'],
-                    },
-                    colors: {
-                        cypher: {
-                            black: '#0a0a0a',
-                            dark: '#111111',
-                            panel: '#1a1a1a',
-                            blue: '#3b82f6',
-                            accent: '#00f0ff'
-                        }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, #202020 1px, transparent 1px), linear-gradient(to bottom, #202020 1px, transparent 1px)",
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cypher | Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          },
+          colors: {
+            cypher: {
+              black: '#0a0a0a',
+              dark: '#111111',
+              panel: '#1a1a1a',
+              blue: '#3b82f6',
+              accent: '#00f0ff'
             }
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, #202020 1px, transparent 1px), linear-gradient(to bottom, #202020 1px, transparent 1px)",
+          }
         }
-    </script>
-    <style>
-        body { background-color: #0a0a0a; color: #e5e5e5; }
-        .step-line {
-            position: absolute;
-            left: 2rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #00f0ff 0%, #3b82f6 100%);
-            z-index: 0;
-        }
-        .step-card {
-            background: #111;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
-        .step-card:hover { border-color: #00f0ff; transform: translateX(10px); }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color:#0a0a0a; color:#e5e5e5; }
+    .step-line{
+      position:absolute; left:2rem; top:0; bottom:0; width:2px;
+      background: linear-gradient(to bottom, #00f0ff 0%, #3b82f6 100%);
+      z-index:0;
+    }
+    .step-card{
+      background:#111;
+      border:1px solid #333;
+      transition:all .25s ease;
+    }
+    .step-card:hover{ border-color:#00f0ff; transform:translateX(8px); }
+    .pill{ border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); backdrop-filter: blur(10px); }
+  </style>
 </head>
+
 <body class="antialiased">
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 bg-cypher-black/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
-                <span class="font-mono font-bold text-xl tracking-tighter text-white">CYPHER <span class="text-cypher-accent text-sm ml-1"> BUILDING INTELLIGENCE</span></span>
-            </a>
-            <a href="index.html#contact" class="bg-white text-black px-6 py-2 rounded font-bold text-sm hover:bg-gray-200 transition">
-                Get Access
-            </a>
-        </div>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="fixed w-full z-50 bg-cypher-black/80 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition">
+        <span class="font-mono font-bold text-xl tracking-tighter text-white">
+          CYPHER <span class="text-cypher-accent text-sm ml-1">OPEN BAS</span>
+        </span>
+      </a>
+      <a href="index.html#contact" class="bg-white text-black px-6 py-2 rounded font-bold text-sm hover:bg-gray-200 transition">
+        Request Proposal
+      </a>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <header class="pt-40 pb-20 px-6 relative overflow-hidden">
-        <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-20 pointer-events-none"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-block px-3 py-1 rounded bg-cypher-blue/10 text-cypher-blue text-xs font-bold mb-6 font-mono border border-cypher-blue/20">
-                ENGINEERING & INSTALLATION
+  <!-- HERO -->
+  <header class="pt-40 pb-20 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-20 pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="pill inline-block rounded-full px-4 py-1.5 mb-7">
+        <span class="text-cypher-accent font-mono text-xs uppercase tracking-widest">
+          <i class="fa-solid fa-screwdriver-wrench mr-2"></i> Engineering • Install • Commissioning
+        </span>
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+        From Scope to Startup.<br>
+        <span class="text-cypher-accent">Done right.</span>
+      </h1>
+
+      <p class="text-xl text-gray-400 font-light">
+        Cypher installs are built like real controls projects: clean panels, documented points, verified I/O, and operator training.
+        No fluff — just systems that work and are serviceable.
+      </p>
+    </div>
+  </header>
+
+  <!-- PROCESS -->
+  <section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto relative">
+      <div class="hidden md:block step-line"></div>
+
+      <div class="space-y-16">
+
+        <!-- STEP 1 -->
+        <div class="relative md:pl-24">
+          <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-cypher-accent rounded-full items-center justify-center z-10">
+            <span class="text-cypher-accent font-bold font-mono text-xl">01</span>
+          </div>
+
+          <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-white mb-2">Scope + Point List</h3>
+              <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">Planning & Documentation</p>
+              <p class="text-gray-400 mb-6 leading-relaxed">
+                We start with equipment scope (RTUs/AHUs/exhaust/lighting), required control points, and a clean point list.
+                This defines sensors, outputs, network layout, and what the dashboard will expose to the operator.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-300 font-mono">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> Equipment inventory + control goals</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> Point list + I/O mapping</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> Network plan (MQTT/Modbus)</li>
+              </ul>
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">From Blueprint to <br><span class="text-cypher-accent">Reality.</span></h1>
-            <p class="text-xl text-gray-400 font-light">
-                Automation isn't just hardware. It's the engineering that makes it work. Here is how we deploy the Cypher ecosystem in your facility.
-            </p>
-        </div>
-    </header>
-
-    <!-- PROCESS TIMELINE -->
-    <section class="pb-24 px-6">
-        <div class="max-w-5xl mx-auto relative">
-            <!-- Vertical Line -->
-            <div class="hidden md:block step-line"></div>
-
-            <div class="space-y-16">
-                
-                <!-- STEP 1: FABRICATION -->
-                <div class="relative md:pl-24">
-                    <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-cypher-accent rounded-full items-center justify-center z-10">
-                        <span class="text-cypher-accent font-bold font-mono text-xl">01</span>
-                    </div>
-                    
-                    <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-bold text-white mb-2">Panel Fabrication</h3>
-                            <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">Off-Site Assembly</p>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                We don't build messy controls in the field. Every Cypher Edge-X1 controller is pre-mounted in a NEMA-rated enclosure at our shop. We install DIN rails, wire ducts, and terminal blocks, ensuring a clean, industrial-grade assembly that is easy to service for years to come.
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-300 font-mono">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> Custom DIN Rail Mounts</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> High-Voltage Separation</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-accent"></i> Pre-Wired Transformers & Fuse Blocks</li>
-                            </ul>
-                        </div>
-                        <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
-                            <i class="fa-solid fa-screwdriver-wrench text-6xl text-white/20"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 2: PROGRAMMING -->
-                <div class="relative md:pl-24">
-                    <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-cypher-blue rounded-full items-center justify-center z-10">
-                        <span class="text-cypher-blue font-bold font-mono text-xl">02</span>
-                    </div>
-                    
-                    <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-bold text-white mb-2">Custom Programming</h3>
-                            <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">Logic & Algorithms</p>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                We configure the <strong>Cypher OS</strong> specifically for your building's equipment. We set up the PID loops for precise temperature control, configure safety interlocks, and design the mobile-responsive floorplans. This isn't "out of the box"—it's tailored engineering.
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-300 font-mono">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-code text-cypher-blue"></i> Sequence of Operations (SOO) Setup</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-code text-cypher-blue"></i> Graphics Generation</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-code text-cypher-blue"></i> Database Configuration</li>
-                            </ul>
-                        </div>
-                        <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
-                            <i class="fa-solid fa-laptop-code text-6xl text-white/20"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 3: MOUNTING -->
-                <div class="relative md:pl-24">
-                    <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-white rounded-full items-center justify-center z-10">
-                        <span class="text-white font-bold font-mono text-xl">03</span>
-                    </div>
-                    
-                    <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-bold text-white mb-2">Field Installation</h3>
-                            <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">On-Site Execution</p>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                Our technicians mount the panels and run the low-voltage communication networks (RS-485/Ethernet). We install sensors in strategic locations to ensure accurate data collection and terminate all field wiring to the Cypher I/O modules.
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-300 font-mono">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-white"></i> Panel Mounting</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-white"></i> Sensor Placement</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-bolt text-white"></i> Communication Bus Wiring</li>
-                            </ul>
-                        </div>
-                        <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
-                            <i class="fa-solid fa-hard-hat text-6xl text-white/20"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- STEP 4: COMMISSIONING -->
-                <div class="relative md:pl-24">
-                    <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-green-500 rounded-full items-center justify-center z-10">
-                        <span class="text-green-500 font-bold font-mono text-xl">04</span>
-                    </div>
-                    
-                    <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 border-green-500/30">
-                        <div class="md:w-2/3">
-                            <h3 class="text-2xl font-bold text-white mb-2">Commissioning</h3>
-                            <p class="text-green-500 font-mono text-xs mb-4 uppercase">Testing & Validation</p>
-                            <p class="text-gray-400 mb-6 leading-relaxed">
-                                The most critical step. We verify every single input and output point. We force the system into "Live Mode" and test safety shutdowns, economizer operation, and schedule overrides. We don't leave until the system is proven to work.
-                            </p>
-                            <ul class="space-y-2 text-sm text-gray-300 font-mono">
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Point-to-Point Checkout</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> PID Loop Tuning</li>
-                                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Customer Training</li>
-                            </ul>
-                        </div>
-                        <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
-                            <i class="fa-solid fa-clipboard-check text-6xl text-white/20"></i>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
+              <i class="fa-solid fa-list-check text-6xl text-white/20"></i>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black border-t border-white/10 py-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <a href="index.html" class="inline-block bg-cypher-accent text-black px-8 py-3 rounded font-bold hover:bg-cyan-400 transition">
-                Return to Home
-            </a>
-            <div class="mt-8 text-xs text-gray-600 font-mono">
-                © 2026 Mechanical Temp. All rights reserved.
+        <!-- STEP 2 -->
+        <div class="relative md:pl-24">
+          <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-cypher-blue rounded-full items-center justify-center z-10">
+            <span class="text-cypher-blue font-bold font-mono text-xl">02</span>
+          </div>
+
+          <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-white mb-2">Panel Build (Shop)</h3>
+              <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">Clean Fabrication</p>
+              <p class="text-gray-400 mb-6 leading-relaxed">
+                Panels are built clean and serviceable. SC-1 (supervisory) and FC-1 (field) controllers are mounted and labeled.
+                We terminate I/O cleanly and prep the communication bus (RS-485 / Ethernet) so field work is faster and cleaner.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-300 font-mono">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-blue"></i> DIN rail, wire duct, labeled terminals</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-blue"></i> SC-1 / FC-1 integration + IO-88 expansions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cypher-blue"></i> 24VAC control power + fused distribution</li>
+              </ul>
             </div>
+            <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
+              <i class="fa-solid fa-box text-6xl text-white/20"></i>
+            </div>
+          </div>
         </div>
-    </footer>
+
+        <!-- STEP 3 -->
+        <div class="relative md:pl-24">
+          <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-white rounded-full items-center justify-center z-10">
+            <span class="text-white font-bold font-mono text-xl">03</span>
+          </div>
+
+          <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-white mb-2">Field Install</h3>
+              <p class="text-cypher-blue font-mono text-xs mb-4 uppercase">On-Site Execution</p>
+              <p class="text-gray-400 mb-6 leading-relaxed">
+                We mount panels, land field wiring, and install sensors. Communications are brought online and verified end-to-end.
+                This step focuses on clean terminations and correct signal types — so commissioning is predictable.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-300 font-mono">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> Panel mounting + field terminations</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> RS-485/Ethernet network bring-up</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> Sensor placement + verification</li>
+              </ul>
+            </div>
+            <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
+              <i class="fa-solid fa-hard-hat text-6xl text-white/20"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="relative md:pl-24">
+          <div class="hidden md:flex absolute left-0 top-0 w-16 h-16 bg-cypher-black border-2 border-green-500 rounded-full items-center justify-center z-10">
+            <span class="text-green-500 font-bold font-mono text-xl">04</span>
+          </div>
+
+          <div class="step-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8 border-green-500/30">
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-white mb-2">Commissioning + Training</h3>
+              <p class="text-green-500 font-mono text-xs mb-4 uppercase">Checkout & Handoff</p>
+              <p class="text-gray-400 mb-6 leading-relaxed">
+                We do a point-to-point checkout, validate sequences, and confirm safeties.
+                Then we train staff on the dashboard: schedules, overrides, alarms (if used), and how to verify the system is operating correctly.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-300 font-mono">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Point checkout (inputs/outputs)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Sequence validation (heat/cool/fan/occ)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-green-500"></i> Operator training + documentation handoff</li>
+              </ul>
+            </div>
+            <div class="md:w-1/3 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 min-h-[200px]">
+              <i class="fa-solid fa-clipboard-check text-6xl text-white/20"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <a href="index.html" class="inline-block bg-cypher-accent text-black px-8 py-3 rounded font-bold hover:bg-cyan-400 transition">
+        Return to Home
+      </a>
+      <div class="mt-8 text-xs text-gray-600 font-mono">
+        © 2026 Mechanical Temp. All rights reserved.
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
